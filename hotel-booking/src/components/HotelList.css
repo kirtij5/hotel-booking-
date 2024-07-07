@@ -1,0 +1,193 @@
+.hotel-list-page {
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #d1dbdb;
+  
+}
+
+.search-bar {
+  width: 800%;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 35px;
+  background: rgba(182, 165, 165, 0.2);
+  color: #fdf8f8;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-bar::placeholder {
+  font-size: 24px; 
+  text-align: center;
+  color: #f0f0f0;/* Adjust placeholder font size */
+}
+
+.search-bar:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add custom focus effect */
+}
+
+
+
+.hotel-about {
+  position: relative;
+  text-align: center;
+  background: url('images/01111.jpg') no-repeat center center/cover;
+  color: rgba(212, 233, 226, 0.699);
+  
+  min-height: 860px;
+}
+
+.hotel-list-nav-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hotelabout-content {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.hotelabout-content h2 {
+  font-size: 4.3rem;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.hotelabout-content p {
+  font-size: 2.0rem;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 40px;
+  line-height: 65px;
+  letter-spacing: 2px;
+}
+/* HotelList.css */
+/* HotelList.css */
+
+.hotel-cards-section {
+  padding: 20px;
+  background-color: rgba(158, 236, 229, 0.089);
+}
+
+.hotel-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four cards per row */
+  gap: 20px; /* Gap between cards */
+  max-width: 1800px; /* Set max-width for the cards container */
+  margin: 0 auto; /* Center align the cards */
+}
+
+.hotel-card {
+  background: rgba(222, 231, 226, 0.863);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 500px; /* Adjust height as needed */
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 1200px) {
+  .hotel-cards {
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row for smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .hotel-cards {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row for tablet screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .hotel-cards {
+    grid-template-columns: 1fr; /* One card per row for mobile screens */
+  }
+}
+
+.hotel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.hotel-info {
+
+  text-align: center;
+ 
+}
+
+.hotel-info h3 {
+  cursor: pointer;
+  color: rgba(66, 104, 98, 0.856);
+  font-size: 2.1rem;
+  font-weight:100;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.hotel-info p {
+  color: rgba(66, 104, 98, 0.856);
+  font-size: 1.2rem;
+  font-family: "Asap Condensed",sans-serif;
+  letter-spacing: 1px;
+ 
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(240, 235, 235, 0.178);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 1000px;
+  max-height: 1500px;
+  overflow: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 100000;
+}
+
+.modal-content .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  border-radius: 10px;
+}

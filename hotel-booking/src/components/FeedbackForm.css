@@ -1,0 +1,70 @@
+.feedback-page{
+    background-image: url('./images/6.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .feedback-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    background:rgb(237,237,237,.1);
+    backdrop-filter:blur(30px);
+  }
+  
+  .feedback-form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .feedback-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .feedback-form-container label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .feedback-form-container input[type="text"],
+  .feedback-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .feedback-form-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .feedback-form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .feedback-form-container input[type="text"]:focus,
+  .feedback-form-container textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  

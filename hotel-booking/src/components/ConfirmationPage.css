@@ -1,0 +1,174 @@
+/* src/components/ConfirmationPage.css */
+
+.confirmation-page {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    filter: none; /* Ensure no blur filter is applied */
+  }
+  
+  .glass-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(8px); /* Apply blur only to the glass container */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    height: 500px;
+    color: #fffefe;
+    text-align: center;
+    z-index: 9; /* Ensure glass container is above the video */
+  }
+  .confirmation-details{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-left: 200px;
+    margin-top: 20px;
+  }
+  .glass-container h2{
+    font-size: 3.2rem;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+ 
+  }
+  
+  .confirmation-details p {
+    margin: 10px 0;
+    font-size: 2.2rem;
+   
+
+  }
+  .payment-options h3{
+    font-size: 2.2rem;
+    margin-top: 30px;
+  }
+  
+  .payment-options button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    width: 250px;
+  }
+  
+  .payment-options button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+
+.payment-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 10;
+    animation: popup-appear 0.3s ease forwards;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .popup-content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .booking-confirmed {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 255, 0, 0.9);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 100;
+    animation: booking-confirmed-appear 0.3s ease forwards;
+  }
+  
+  @keyframes popup-appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes booking-confirmed-appear {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+  }
+
+  .feedback-prompt {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  .feedback-prompt button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .feedback-prompt button:hover {
+    background: #0056b3;
+  }
+  

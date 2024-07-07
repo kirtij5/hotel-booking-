@@ -1,0 +1,17 @@
+.hotel-details-container {
+    padding: 20px;
+}
+
+.hotel-cover-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.hotel-images img {
+    max-width: 100px;
+    margin: 10px;
+}
+
+.btn-back {
+    margin-top: 20px;
+}

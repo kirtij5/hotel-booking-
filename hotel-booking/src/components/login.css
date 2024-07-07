@@ -1,0 +1,185 @@
+/* login.css */
+
+/* Overlay styles for the blurry background */
+.login-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20px;
+  background-image: url('./images/77777.jpg'); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/77777.jpg') center center/cover no-repeat;
+  filter: blur(8px); /* Adjust blur amount for the background image */
+  z-index: -1; /* Send the blurred background behind other content */
+}
+
+/* Glassmorphism effect box */
+.login-glass-box {
+  background: rgba(255, 255, 255, 0.25); /* Adjust opacity for glass effect */
+  backdrop-filter: blur(20px); /* Adjust blur amount */
+  border-radius: 30px;
+  padding: 50px;
+  width: 100%;
+  height: 650px;
+  max-width: 900px; /* Increased width */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Adjust shadow */
+}
+
+/* Title styles */
+.login-title {
+  color: #333333; /* Adjust text color */
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3.2rem; /* Increased font size */
+}
+
+/* Form styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+}
+
+/* Input group styles */
+.login-input-group {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.4); /* Adjust opacity for input background */
+  backdrop-filter: blur(10px); /* Adjust blur amount */
+  border-radius: 38px;
+  padding: 35px;
+  width: 80%;
+  height: 30px;
+}
+
+/* Icon styles */
+.login-icon {
+  color: #f2ffff; /* Adjust icon color */
+  margin-right: 15px;
+  height: 40px;
+  width: 50px;
+}
+
+/* Input styles */
+.login-input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  color: #333333; /* Adjust text color */
+  height: 50px; /* Equal height */
+  font-size: 25px; /* Adjust font size */
+  padding: 0 10px;
+ 
+}
+
+/* Specific input styles for username */
+#username.login-input {
+  border: none;
+  background: none;
+  outline: none;
+  box-shadow: none; /* Remove default browser styling */
+  font-size: 16px;
+}
+
+/* Button styles */
+.login-button {
+  background-color: rgb(148, 143, 146); /* Pastel beige */
+  border: #c3dddd;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 20px 0;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 37px;
+  width: 20%;
+  height: 70px;
+}
+
+.login-button:hover {
+  background-color: rgba(252, 227, 227, 0.6); 
+  color: #333333; 
+  border: 2px solid #f0f8f0;
+}
+
+/* Toggle group styles */
+.login-toggle-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+/* Toggle label styles */
+.login-toggle-label {
+  display: flex;
+  align-items: center;
+  color: #333333; /* Adjust text color */
+  font-size: 27px;
+}
+
+/* Toggle styles */
+.react-toggle-track {
+  background-color: #ffffff; /* Background color of toggle track */
+}
+
+.react-toggle-thumb {
+  background-color: transparent !important; /* Transparent background for toggle thumb */
+  border: none !important; /* Remove border */
+  width: 32px; /* Adjust thumb size */
+  height: 32px; /* Adjust thumb size */
+}
+
+/* Error message styles */
+.error-message {
+  color: #ff3333; /* Adjust error message color */
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Register link styles */
+.login-register-link {
+  color: #333333; /* Adjust link color */
+  text-align: center;
+  margin-top: 27px;
+  font-size: 26px;
+}
+
+.login-register-link a {
+  color: #333333; /* Adjust link color */
+  text-decoration: none;
+}
+
+.login-register-link a:hover {
+  text-decoration: underline;
+}
+/* Custom toggle styles */
+.custom-toggle.react-toggle--checked .react-toggle-thumb {
+  background-image: url('./avatars/avatar10.jpg'); /* Path to your admin icon */
+  background-size: cover;
+}
+
+.custom-toggle .react-toggle-thumb {
+  background-image: url('./avatars/avatar14.jpg'); /* Path to your user icon */
+  background-size: cover;
+}

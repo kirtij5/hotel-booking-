@@ -1,0 +1,79 @@
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(175, 156, 228, 0.664) 0%, rgba(238, 150, 204, 0.801) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.booking-list h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.booking-list table {
+  width: 100%;
+  max-width: 1200px;
+  border-collapse: collapse;
+  background: rgba(106, 154, 160, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.booking-list table th, 
+.booking-list table td {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.booking-list table th {
+  background: rgba(0, 128, 128, 0.7);
+  color: #fff;
+}
+
+.booking-list table tbody tr:nth-child(even) {
+  background: rgba(0, 128, 128, 0.1);
+}
+
+.booking-list table tbody tr:hover {
+  background: rgba(0, 128, 128, 0.3);
+}
+
+.booking-list table tbody tr:hover td {
+  background: rgba(0, 128, 128, 0.3);
+}
+
+.booking-list table tbody td:hover {
+  background: rgba(0, 128, 128, 0.5);
+  color: #fff;
+}
+
+.booking-list table th:hover {
+  background: rgba(0, 100, 100, 0.9);
+  color: #fff;
+}
+
+.booking-list table th:hover ~ th {
+  background: rgba(0, 100, 100, 0.9);
+  color: #fff;
+}
+
+.booking-list table th:hover ~ td {
+  background: rgba(0, 100, 100, 0.9);
+  color: #fff;
+}
+
+.booking-list table td:first-child:hover {
+  border-left: 5px solid rgba(0, 128, 128, 0.7);
+}
+
+.booking-list table td:last-child:hover {
+  border-right: 5px solid rgba(0, 128, 128, 0.7);
+}

@@ -1,0 +1,75 @@
+.user-list-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(194, 225, 228, 0.356) 0%, rgba(238, 150, 204, 0.623) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.user-list-title {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  color: #fffdfd;  margin-bottom: 35px;
+}
+
+.user-list-table {
+  width: 100%;
+  max-width: 1500px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 700px;
+
+}
+
+.user-list-table .ant-table-thead > tr > th {
+  background: rgba(195, 163, 231, 0.753);
+  color: #333333c9;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.user-list-table .ant-table-tbody > tr > td {
+  background: rgba(238, 150, 179, 0.521);
+  text-align: center;
+  color: #5e5252;
+  font-size: 1.7rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.user-list-table .ant-table-tbody > tr:hover > td {
+  background: rgba(147, 179, 187, 0.8);
+  color: #333;
+}
+
+.user-list-table .ant-table-tbody > tr:hover > td:first-child {
+  border-left: 5px solid rgba(150, 211, 173, 0.993);
+}
+
+.user-list-table .ant-table-tbody > tr:hover > td:last-child {
+  border-right: 5px solid rgba(120, 175, 197, 0.8);
+}
+
+.user-list-table .ant-table-tbody > tr > td:hover {
+  background: rgba(190, 240, 211, 0.966);
+  color: #333;
+}
+
+.user-list-table .ant-table-tbody > tr:hover > td:hover {
+  background: rgba(181, 249, 252, 0.8);
+  color: #333;
+}
+
+.user-list-table .ant-table-tbody > tr:hover {
+  box-shadow: 0 0 10px rgba(185, 255, 200, 0.8);
+}
+
+.user-list-table .ant-table-placeholder {
+  background: rgba(147, 147, 192, 0.2);
+  color: #999;
+}

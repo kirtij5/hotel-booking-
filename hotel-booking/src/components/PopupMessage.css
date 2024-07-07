@@ -1,0 +1,35 @@
+.popup-message {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 8px;
+    color: #fff; /* Text color */
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none; /* Prevents blocking clicks on underlying elements */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and transform */
+    opacity: 0; /* Initially hidden */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.popup-message.show {
+    opacity: 1; /* Show the message */
+}
+
+/* Animation keyframes for fading out */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease forwards; /* Apply fade-out animation */
+}
