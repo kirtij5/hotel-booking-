@@ -314,6 +314,19 @@ app.post('/submit-feedback', (req, res) => {
     });
 });
 
+// Endpoint to handle payment details
+app.post('/payment', (req, res) => {
+    const { username, payment_method } = req.body;
+    const query = 'INSERT INTO payment (username, payment_method) VALUES (?, ?)';
+    
+    db.query(query, [username, payment_method], (err, result) => {
+      if (err) {
+        console.error('Error saving payment details:', err);
+        return res.status(500).json({ success: false, message: 'Error saving payment details', error: err });
+      }
+      res.json({ success: true, message: 'Payment details saved successfully' });
+    });
+  }); 
 //Feedback listing
 
 app.get('/feedback', (req, res) => {

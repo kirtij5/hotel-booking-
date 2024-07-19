@@ -10,6 +10,7 @@ import {
   faEnvelope,
   faFax,
   faMapMarkerAlt,
+  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import BookingImage from "../components/images/giphy.gif";
@@ -50,6 +51,9 @@ const Home2 = () => {
       top: contactSectionOffset - 100,
       behavior: "smooth",
     });
+  };
+  const handleLogout = () => {
+    navigate("/"); // Navigate to Home.js on logout
   };
 
   return (
@@ -93,6 +97,24 @@ const Home2 = () => {
           >
             <span className="nav-text">Contact Us</span>
             <FontAwesomeIcon icon={faPhone} className="icon" />
+          </div>
+          <div
+            className={`nav-link ${activeLink === "contact" ? "active" : ""}`}
+            onClick={scrollToContact} // Scroll to Contact Us section
+            onMouseEnter={() => setActiveLink("contact")}
+            onMouseLeave={() => setActiveLink(null)}
+          >
+            <span className="nav-text">Contact Us</span>
+            <FontAwesomeIcon icon={faPhone} className="icon" />
+          </div>
+          <div
+            className={`nav-link ${activeLink === "logout" ? "active" : ""}`}
+            onClick={handleLogout} // Navigate to Home.js on logout
+            onMouseEnter={() => setActiveLink("logout")}
+            onMouseLeave={() => setActiveLink(null)}
+          >
+            <span className="nav-text">Logout</span>
+            <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
           </div>
         </nav>
       </header>

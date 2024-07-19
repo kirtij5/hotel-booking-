@@ -26,13 +26,14 @@
     backdrop-filter: blur(8px); /* Apply blur only to the glass container */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    width: 90%;
-    max-width: 900px;
+    padding: 80px;
+    width: 70%;
+    max-width: 800px;
     height: 500px;
     color: #fffefe;
     text-align: center;
     z-index: 9; /* Ensure glass container is above the video */
+    margin-top: -125px;
   }
   .confirmation-details{
     display: flex;
@@ -42,12 +43,20 @@
     margin-top: 20px;
   }
   .glass-container h2{
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     color: rgb(255, 255, 255);
-    margin-top: 20px;
+    margin-top: -11px;
  
   }
   
+.white-container {
+  background: #fff;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
   .confirmation-details p {
     margin: 10px 0;
     font-size: 2.2rem;
@@ -55,8 +64,8 @@
 
   }
   .payment-options h3{
-    font-size: 2.2rem;
-    margin-top: 30px;
+    font-size: 2.6rem;
+    margin-top: 50px;
   }
   
   .payment-options button {
@@ -64,7 +73,7 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     padding: 10px 20px;
-    margin: 10px 5px;
+    margin: 3px 2px;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -116,12 +125,17 @@
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 255, 0, 0.9);
-    color: #fff;
+    background-color: rgb(240, 240, 240);
+    color: #222020e1;
     padding: 10px 20px;
     border-radius: 5px;
     z-index: 100;
     animation: booking-confirmed-appear 0.3s ease forwards;
+    width: 920px;
+    margin-top: 200px;
+    text-align: center;
+    height: 430px;
+    justify-content: center;
   }
   
   @keyframes popup-appear {
@@ -146,7 +160,7 @@
 
   .feedback-prompt {
     position: fixed;
-    top: 50%;
+    top: 64%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.9);
@@ -155,6 +169,10 @@
     border-radius: 8px;
     text-align: center;
     z-index: 1000;
+    width: 920px;
+    height: 130px;
+    justify-content: center;
+    
   }
   
   .feedback-prompt button {
