@@ -52,6 +52,7 @@ const Home2 = () => {
       behavior: "smooth",
     });
   };
+
   const handleLogout = () => {
     navigate("/"); // Navigate to Home.js on logout
   };
@@ -68,7 +69,6 @@ const Home2 = () => {
             <span className="nav-text">Home</span>
             <FontAwesomeIcon icon={faHome} className="icon" />
           </div>
-          {/* Removed Login nav link */}
           <div
             className={`nav-link ${activeLink === "about" ? "active" : ""}`}
             onClick={scrollToAbout} // Scroll to About Us section
@@ -88,15 +88,6 @@ const Home2 = () => {
           >
             <span className="nav-text">Testimonials</span>
             <FontAwesomeIcon icon={faComments} className="icon" />
-          </div>
-          <div
-            className={`nav-link ${activeLink === "contact" ? "active" : ""}`}
-            onClick={scrollToContact} // Scroll to Contact Us section
-            onMouseEnter={() => setActiveLink("contact")}
-            onMouseLeave={() => setActiveLink(null)}
-          >
-            <span className="nav-text">Contact Us</span>
-            <FontAwesomeIcon icon={faPhone} className="icon" />
           </div>
           <div
             className={`nav-link ${activeLink === "contact" ? "active" : ""}`}
@@ -244,7 +235,7 @@ const Home2 = () => {
           </div>
         </div>
         <div className="copyright-section">
-          <p>&copy; 2024 All rights reserved || @INSTASTAY__</p>
+          <p>&copy; 2023 InstaStay. All rights reserved.</p>
         </div>
       </section>
     </div>

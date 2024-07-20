@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import './FeedbackForm.css';
 import { useUserContext } from '../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 function FeedbackForm() {
   const [feedback, setFeedback] = useState("");
   const [rating, setRating] = useState(0); // Added rating state
+  const [showPopup, setShowPopup] = useState(false); // State for popup visibility
   const { user } = useUserContext();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,11 +22,16 @@ function FeedbackForm() {
       })
       .then((response) => {
         console.log(response.data);
-        alert("Feedback submitted successfully");
+        setShowPopup(true); // Show popup on successful submission
       })
       .catch((error) => {
         console.error("There was an error submitting the feedback!", error);
       });
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false); // Hide popup
+    navigate('/home2'); // Navigate to home2
   };
 
   return (
@@ -77,6 +85,17 @@ function FeedbackForm() {
           <button type="submit">Submit</button>
         </form>
       </div>
+
+      {/* Popup for feedback submission confirmation */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h3>Feedback Submitted Successfully!</h3>
+            <p>Your feedback has been received. Thank you!</p>
+            <button onClick={handlePopupClose}>OK</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

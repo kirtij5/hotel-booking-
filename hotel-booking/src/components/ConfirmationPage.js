@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useUserContext } from '../context/UserContext';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ConfirmationPage.css'; // Import the CSS file
-import videoBackground from '../components/images/h2.mp4'; // Import the video file
+
 
 const ConfirmationPage = () => {
   const { user } = useUserContext(); // Fetch user from context
@@ -177,10 +177,6 @@ const ConfirmationPage = () => {
 
   return (
     <div className="confirmation-page">
-      <video className="video-background" autoPlay loop muted>
-        <source src={videoBackground} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       <div className="glass-container">
         <h2>Booking Confirmation</h2>
         <div className="confirmation-details">

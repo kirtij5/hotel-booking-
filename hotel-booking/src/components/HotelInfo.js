@@ -87,6 +87,7 @@ const HotelInfo = () => {
       navigate(`/confirmation/${hotel.name}/${roomType}/${calculatedTotalPrice}`, {
         state: {
           hotelId: hotel.id,
+          hotelName:hotel.name,
           checkInDate: checkInDate.toISOString().split('T')[0],
           checkOutDate: checkOutDate.toISOString().split('T')[0],
           adults,

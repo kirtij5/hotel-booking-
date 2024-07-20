@@ -2,7 +2,7 @@
 
 .addhotel {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #07010a57 0%, #0b08d456 100%);
+  background: linear-gradient(135deg, #0f0b11c2 0%, #030305ab 100%);
   color: white;
 
   display: flex;
@@ -77,3 +77,48 @@ padding-top: 15px;
   background: #5DB9B4;
 }
 
+/* Popup styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    color: #000000;
+}
+
+.popup-content h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.popup-content p {
+    margin: 10px 0;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
