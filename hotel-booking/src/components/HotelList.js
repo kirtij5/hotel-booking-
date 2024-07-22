@@ -38,8 +38,8 @@ const HotelList = () => {
     setSelectedHotel(null);
   };
 
-  const handleHotelClick = (id) => {
-    navigate(`/hotel-info/${id}`);
+  const handleHotelClick = (Hotel_id) => {
+    navigate(`/hotel-info/${Hotel_id}`);
   };
 
   const handleSearchChange = (e) => {
@@ -86,7 +86,7 @@ const HotelList = () => {
                 onClick={() => openModal(hotel)}
               />
               <div className="hotel-info">
-                <h3 onClick={() => handleHotelClick(hotel.id)}>{hotel.name}</h3>
+                <h3 onClick={() => handleHotelClick(hotel.Hotel_id)}>{hotel.name}</h3>
                 <p>{hotel.location}</p>
               </div>
             </div>

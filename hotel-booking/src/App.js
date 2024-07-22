@@ -37,10 +37,10 @@ function App() {
           <Route path="/bookings" element={<BookingList />} />
           <Route path="/feedbacklist" element={<FeedbackList />} />
           <Route path="/AddHotel" element={<AddHotel />} />
-          <Route path="/hotels/:id" element={<HotelDetails />} />
+          <Route path="/hotels/:Hotel_id" element={<HotelDetails />} />
           <Route path="/hotel-info" element={<HotelList />} />
-          <Route path="/EditHotel" element={<HotelLista />} /> <Route path="/updateHotel/:id" element={<UpdateHotel />} />
-          <Route path="/hotel-info/:id" element={<HotelInfo />} />
+          <Route path="/EditHotel" element={<HotelLista />} /> <Route path="/updateHotel/:Hotel_id" element={<UpdateHotel />} />
+          <Route path="/hotel-info/:Hotel_id" element={<HotelInfo />} />
           <Route path="/confirmation/:hotelName/:roomType/:roomPrice" element={<ConfirmationPage />} />
           <Route path="/confirmation-success" element={<PaymentSuccess />} />
           <Route path="/feedback" element={<FeedbackForm />} />

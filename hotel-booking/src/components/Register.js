@@ -1,16 +1,17 @@
-// src/components/Register.js
-
 import React, { useState } from 'react';
 import './register.css';
 import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Modal from 'react-modal';
 
+Modal.setAppElement('#root'); // Required for accessibility
 
 function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -31,7 +32,12 @@ function Register() {
         setEmail('');
         setPassword('');
 
+        // Open success modal
+        setModalIsOpen(true);
+
         setTimeout(() => {
+          // Close modal and navigate to login page after 2 seconds
+          setModalIsOpen(false);
           navigate('/login');
         }, 2000);
       })
@@ -42,7 +48,6 @@ function Register() {
 
   return (
     <div className="register-container">
-      
       <div className="register-glass-box">
         <h1 className="register-title">Register</h1>
         <form className="register-form" onSubmit={handleSubmit}>
@@ -91,6 +96,16 @@ function Register() {
           </a>
         </p>
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        contentLabel="Success Message"
+        className="success-modal"
+        overlayClassName="success-modal-overlay"
+      >
+        <h2>Registered Successfully!</h2>
+      </Modal>
     </div>
   );
 }

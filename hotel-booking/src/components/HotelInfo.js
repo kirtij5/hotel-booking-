@@ -13,7 +13,7 @@ import penthouse from "../components/room/22.jpg";
 
 const HotelInfo = () => {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { Hotel_id } = useParams();
   const [hotel, setHotel] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [checkInDate, setCheckInDate] = useState(new Date());
@@ -38,7 +38,7 @@ const HotelInfo = () => {
 
   const fetchHotelInfo = async () => {
     try {
-      const response = await axios.get(`http://localhost:8081/hotels/${id}`);
+      const response = await axios.get(`http://localhost:8081/hotels/${Hotel_id}`);
       setHotel(response.data);
       setRoomPrice(response.data.single_room_price); // Default room price to single room
     } catch (error) {
@@ -86,7 +86,7 @@ const HotelInfo = () => {
 
       navigate(`/confirmation/${hotel.name}/${roomType}/${calculatedTotalPrice}`, {
         state: {
-          hotelId: hotel.id,
+          hotelId: hotel.Hotel_id,
           hotelName:hotel.name,
           checkInDate: checkInDate.toISOString().split('T')[0],
           checkOutDate: checkOutDate.toISOString().split('T')[0],

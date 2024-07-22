@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
 // Sign up route for users
 app.post('/user', (req, res) => {
     const { username, email, password } = req.body;
-    const sql = 'INSERT INTO user(username, email, password) VALUES (?, ?, ?)';
+    const sql = 'INSERT INTO user(username, user_email, user_password) VALUES (?, ?, ?)';
     const values = [username, email, password];
     db.query(sql, values, (err, data) => {
         if (err) {
@@ -64,7 +64,7 @@ app.post('/user', (req, res) => {
 // Admin login route
 app.post('/admin', (req, res) => {
     const { username, password } = req.body;
-    const sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
+    const sql = "SELECT * FROM admin WHERE admin_name = ? AND admin_password = ?";
     const values = [username, password];
     db.query(sql, values, (err, data) => {
         if (err) {
@@ -84,7 +84,7 @@ app.post('/admin', (req, res) => {
 // User login route
 app.post('/user2', (req, res) => {
     const { username, password } = req.body;
-    const sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+    const sql = "SELECT * FROM user WHERE username = ? AND user_password = ?";
     const values = [username, password];
     db.query(sql, values, (err, data) => {
         if (err) {
@@ -104,7 +104,7 @@ app.post('/user2', (req, res) => {
 //user listing
 
 app.get('/user', (req, res) => {
-    const sql = "SELECT username, email FROM user"; // Add more fields as needed
+    const sql = "SELECT username,user_email FROM user"; // Add more fields as needed
     db.query(sql, (err, data) => {
       if (err) {
         console.error('Database error:', err);
@@ -147,8 +147,8 @@ app.post('/addHotel', upload.fields([
 });
 
 // Endpoint to update hotel details
-app.put('/hotels/:id', (req, res) => {
-    const hotelId = req.params.id;
+app.put('/hotels/:Hotel_id', (req, res) => {
+    const hotelId = req.params.Hotel_id;
     const {
         hotelName, hotelDescription, location, address, email, phoneNumber,
         singleRoomPrice, deluxeRoomPrice, presidentialSuitePrice, penthousePrice
@@ -158,7 +158,7 @@ app.put('/hotels/:id', (req, res) => {
         UPDATE hotel_details SET
         name = ?, description = ?, location = ?, address = ?, email = ?, phone_number = ?,
         single_room_price = ?, deluxe_room_price = ?, presidential_suite_price = ?, penthouse_price = ?
-        WHERE id = ?
+        WHERE Hotel_id = ?
     `;
 
     const values = [
@@ -179,25 +179,23 @@ app.put('/hotels/:id', (req, res) => {
 
 
 // Endpoint to delete hotel by ID
-app.delete('/hotels/:id', (req, res) => {
-    const { id } = req.params;
-    const deleteHotelSql = "DELETE FROM hotel_details WHERE id = ?";
+app.delete('/hotels/:Hotel_id', (req, res) => {
+    const { Hotel_id } = req.params;
+    const deleteHotelSql = "DELETE FROM hotel_details WHERE Hotel_id = ?";
 
-    // Delete hotel details
-    db.query(deleteHotelSql, id, (err, result) => {
+    db.query(deleteHotelSql, Hotel_id, (err, result) => {
         if (err) {
             console.error('Error deleting hotel:', err);
             return res.status(500).json({ success: false, error: 'Internal server error' });
         }
 
-        // Return success message
         return res.json({ success: true, message: 'Hotel deleted successfully' });
     });
 });
 
 // Endpoint to fetch hotel details
 app.get('/hotels', (req, res) => {
-    const sql = "SELECT id, name, location, cover_image FROM hotel_details";
+    const sql = "SELECT Hotel_id, name, location, cover_image FROM hotel_details";
     db.query(sql, (err, data) => {
         if (err) {
             console.error('Database error:', err);
@@ -208,12 +206,12 @@ app.get('/hotels', (req, res) => {
 });
 
 // Endpoint to fetch a single hotel details by ID
-app.get('/hotels/:id', (req, res) => {
-    const hotelId = req.params.id;
+app.get('/hotels/:Hotel_id', (req, res) => {
+    const Hotel_Id = req.params.Hotel_id;
 
-    const getHotelSql = 'SELECT * FROM hotel_details WHERE id = ?';
+    const getHotelSql = 'SELECT * FROM hotel_details WHERE Hotel_id = ?';
 
-    db.query(getHotelSql, [hotelId], (err, results) => {
+    db.query(getHotelSql, [Hotel_Id], (err, results) => {
         if (err) {
             console.error('Error fetching hotel details:', err);
             return res.status(500).json({ success: false, error: 'Failed to fetch hotel details. Please try again.' });
@@ -224,12 +222,12 @@ app.get('/hotels/:id', (req, res) => {
         }
 
         const hotel = results[0];
-        // Parse hotel_images from JSON string to array
         hotel.hotel_images = JSON.parse(hotel.hotel_images);
 
         return res.json(hotel);
     });
 });
+
 // server.js
 app.get('/user', (req, res) => {
     const token = req.headers['authorization'].split(' ')[1]; // Extract token from Bearer header
@@ -244,7 +242,7 @@ app.get('/user', (req, res) => {
       return res.status(401).json({ success: false, error: 'Invalid token' });
     }
   
-    const sql = "SELECT id FROM user WHERE username = ?";
+    const sql = "SELECT user_id FROM user WHERE username = ?";
     db.query(sql, [userInfo.username], (err, data) => {
       if (err) {
         console.error('Database error:', err);
@@ -283,7 +281,7 @@ app.get('/bookings', (req, res) => {
     const sql = `
         SELECT b.*, h.name
         FROM bookings b
-        INNER JOIN hotel_details h ON b.hotel_id = h.id
+        INNER JOIN hotel_details h ON b.hotel_id = h.Hotel_id
     `;
 
     db.query(sql, (err, results) => {

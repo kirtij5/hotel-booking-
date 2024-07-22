@@ -22,7 +22,7 @@ const UserList = () => {
 
   const userColumns = [
     { title: 'Username', dataIndex: 'username', key: 'username' },
-    { title: 'Email', dataIndex: 'email', key: 'email' },
+    { title: 'Email', dataIndex: 'user_email', key: 'user_email' },
     // Add more columns for user data as needed
   ];
 

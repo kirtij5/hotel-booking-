@@ -6,7 +6,7 @@ import { useParams, Link } from 'react-router-dom';
 import './HotelDetails.css'; // Optional: Add your own CSS for styling
 
 const HotelDetails = () => {
-    const { id } = useParams(); // Get the hotel ID from the URL parameter
+    const { Hotel_id } = useParams(); // Get the hotel ID from the URL parameter
     const [hotel, setHotel] = useState(null); // State to hold hotel details
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const HotelDetails = () => {
 
     const fetchHotelDetails = async () => {
         try {
-            const response = await axios.get(`http://localhost:8081/hotels/${id}`); // Fetch hotel details by ID
+            const response = await axios.get(`http://localhost:8081/hotels/${Hotel_id}`); // Fetch hotel details by ID
             setHotel(response.data); // Set fetched hotel details to state
         } catch (error) {
             console.error('Error fetching hotel details:', error); // Error handling
@@ -24,7 +24,7 @@ const HotelDetails = () => {
 
     const handleDeleteHotel = async () => {
         try {
-            await axios.delete(`http://localhost:8081/hotels/${id}`); // Delete hotel by ID
+            await axios.delete(`http://localhost:8081/hotels/${Hotel_id}`); // Delete hotel by ID
             // Redirect to hotel list or any other page after deletion
             // Example: navigate('/hotels');
         } catch (error) {
